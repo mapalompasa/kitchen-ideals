@@ -1,0 +1,86 @@
+/* ==========================================================================
+   IDEAL KITCHENS ZAMBIA — DESIGN SYSTEM TOKENS
+   Aesthetic: Editorial Architectural Luxury / High-Ambition Agency Standards
+   ========================================================================== */
+
+:root {
+  /* Color Palette — High-contrast architectural monochrome with bespoke crimson */
+  --bg-dark: #0a0a09;
+  --bg-dark-secondary: #131312;
+  --surface-dark: #191918;
+  --surface-dark-elevated: #222220;
+  
+  --bg-light: #fbf9f5;
+  --bg-light-secondary: #f3efe8;
+  --surface-light: #ffffff;
+  --surface-light-elevated: #ffffff;
+
+  /* Typography Colors */
+  --text-dark: #0e0e0d;
+  --text-muted-dark: #63615b;
+  --text-dim-dark: #949187;
+
+  --text-light: #fbf9f5;
+  --text-muted-light: #94928b;
+  --text-dim-light: #595854;
+
+  /* Accentuation */
+  --accent: #c41525;
+  --accent-hover: #e01b2d;
+  --accent-dark: #820e18;
+  --accent-subtle: rgba(196, 21, 37, 0.12);
+  --accent-glow: rgba(196, 21, 37, 0.35);
+
+  --accent-brass: #bfa16a;
+  --accent-brass-subtle: rgba(191, 161, 106, 0.15);
+
+  /* Architectural Borders */
+  --border-dark: rgba(255, 255, 255, 0.09);
+  --border-dark-hover: rgba(255, 255, 255, 0.22);
+  --border-light: rgba(14, 14, 13, 0.1);
+  --border-light-hover: rgba(14, 14, 13, 0.28);
+
+  /* Typography Families */
+  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* Typography Scale */
+  --text-hero: clamp(3.2rem, 8vw, 7.8rem);
+  --text-h1: clamp(2.4rem, 5.5vw, 5rem);
+  --text-h2: clamp(1.8rem, 3.8vw, 3.4rem);
+  --text-h3: clamp(1.25rem, 2.2vw, 1.85rem);
+  --text-lead: clamp(1.05rem, 1.4vw, 1.25rem);
+  --text-body: 0.95rem;
+  --text-small: 0.82rem;
+  --text-meta: 0.72rem;
+
+  /* Spacing Scale */
+  --space-unit: 1rem;
+  --container-max: 1480px;
+  --section-padding: clamp(5rem, 9vw, 9.5rem);
+  --gutter: clamp(1.5rem, 3.5vw, 3.5rem);
+  --banner-height: 42px;
+
+  /* Radius */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-fast: 0.2s var(--ease-editorial);
+  --transition-normal: 0.4s var(--ease-editorial);
+  --transition-slow: 0.8s var(--ease-editorial);
+
+  /* Z-Index Hierarchy */
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-nav: 500;
+  --z-cursor: 900;
+  --z-modal: 1000;
+  --z-loader: 2000;
+}

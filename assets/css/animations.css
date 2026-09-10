@@ -1,0 +1,91 @@
+/* ==========================================================================
+   IDEAL KITCHENS ZAMBIA — MOTION & ANIMATION SYSTEM
+   ========================================================================== */
+
+/* Infinite Marquee */
+@keyframes marqueeLeft {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-track.track-left {
+  animation: marqueeLeft 38s linear infinite;
+}
+
+.marquee-track.track-right {
+  animation: marqueeRight 42s linear infinite;
+}
+
+.marquee-wrap:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Continuous Badge Rotation */
+@keyframes spinBadge {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spin-badge {
+  animation: spinBadge 24s linear infinite;
+  transform-origin: center center;
+}
+
+/* WhatsApp Pulse Glow */
+@keyframes pulseWhatsApp {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5), 0 8px 25px rgba(0,0,0,0.3); 
+  }
+  50% { 
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0), 0 12px 30px rgba(37, 211, 102, 0.4); 
+  }
+}
+
+.pulse-whatsapp {
+  animation: pulseWhatsApp 2.4s infinite;
+}
+
+/* Scroll Reveals */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* CTA Pulse Glow (used on primary estimator launch button) */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(196, 21, 37, 0.5), 0 8px 25px rgba(196, 21, 37, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(196, 21, 37, 0), 0 12px 35px rgba(196, 21, 37, 0.4);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+
