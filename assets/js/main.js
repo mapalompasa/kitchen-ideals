@@ -4,14 +4,34 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initDemoBanner();
   initSiteLoader();
   initStickyHeader();
   initMobileMenu();
   initScrollReveals();
-    initServicesAccordion();
+  initServicesAccordion();
   initGalleryFilteringAndLightbox();
   initImageAssurance();
 });
+
+/**
+ * 0. Demo Announcement Banner Controller
+ */
+function initDemoBanner() {
+  const banner = document.getElementById('demoTopBanner');
+  const closeBtn = document.getElementById('demoBannerClose');
+  const header = document.getElementById('siteHeader');
+
+  if (!banner || !closeBtn) return;
+
+  closeBtn.addEventListener('click', () => {
+    banner.style.display = 'none';
+    document.documentElement.style.setProperty('--banner-height', '0px');
+    if (header) {
+      header.style.top = '0px';
+    }
+  });
+}
 
 /**
  * 1. Intro Page Loader
