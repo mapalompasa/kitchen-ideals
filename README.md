@@ -65,7 +65,11 @@ kitchen-ideals/
 │       ├── ideal_authentic_4.jpeg   # Real Ideal Kitchens project photo
 │       ├── ideal_authentic_5.jpeg   # Real Ideal Kitchens project photo
 │       └── ideal_authentic_6.jpeg   # Real Ideal Kitchens project photo
-└── README.md                    # This document
+├── vercel.json                  # Vercel configuration (Clean URLs, caching & security headers)
+├── package.json                 # Project scripts and metadata
+├── 404.html                     # Branded luxury 404 error page
+├── .gitignore                   # Ignored files for version control
+└── README.md                    # Project documentation & deployment guide
 ```
 
 ---
@@ -73,7 +77,37 @@ kitchen-ideals/
 ## 5. How to Run Locally
 Open `index.html` directly in any modern browser, or launch a local web server:
 ```bash
-npx serve "C:\Users\Mapalo Mpasa\Documents\kitchen-ideals"
+npx serve .
 # or
-python -m http.server 3000 --directory "C:\Users\Mapalo Mpasa\Documents\kitchen-ideals"
+python -m http.server 3500
 ```
+
+---
+
+## 6. Deploying to Vercel (Zero-Config Production)
+
+This project has been pre-configured with `vercel.json` for optimal edge performance, clean URLs, security headers, and asset caching.
+
+### Option A: GitHub & Vercel Dashboard (Recommended)
+1. Create a new repository on [GitHub](https://github.com/new) (e.g. `ideal-kitchens-zambia`).
+2. Link this local repository and push:
+   ```bash
+   git remote add origin https://github.com/YOUR-USERNAME/ideal-kitchens-zambia.git
+   git branch -M main
+   git push -u origin main
+   ```
+3. Go to [vercel.com/new](https://vercel.com/new).
+4. Click **Import** next to your `ideal-kitchens-zambia` repository.
+5. Keep the default settings (Framework Preset: **Other**) and click **Deploy**.
+6. Your website will be live worldwide in seconds with automatic HTTPS and global edge CDN!
+
+### Option B: Deploy via Vercel CLI
+If you prefer deploying directly from your terminal:
+```bash
+npx vercel
+```
+- Follow the prompts to log in to your Vercel account.
+- For a production deployment directly to your live domain:
+  ```bash
+  npx vercel --prod
+  ```
