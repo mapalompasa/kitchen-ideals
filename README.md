@@ -65,6 +65,8 @@ kitchen-ideals/
 │       ├── ideal_authentic_4.jpeg   # Real Ideal Kitchens project photo
 │       ├── ideal_authentic_5.jpeg   # Real Ideal Kitchens project photo
 │       └── ideal_authentic_6.jpeg   # Real Ideal Kitchens project photo
+├── _headers                     # Cloudflare Pages security & caching headers
+├── _redirects                   # Cloudflare Pages redirect rules
 ├── vercel.json                  # Vercel configuration (Clean URLs, caching & security headers)
 ├── package.json                 # Project scripts and metadata
 ├── 404.html                     # Branded luxury 404 error page
@@ -84,30 +86,39 @@ python -m http.server 3500
 
 ---
 
-## 6. Deploying to Vercel (Zero-Config Production)
+## 6. Deploying to Cloudflare Pages (Zero-Config Global Edge)
 
-This project has been pre-configured with `vercel.json` for optimal edge performance, clean URLs, security headers, and asset caching.
+This website is primed natively for **Cloudflare Pages** with `_headers`, `_redirects`, and static edge delivery.
 
-### Option A: GitHub & Vercel Dashboard (Recommended)
-1. Create a new repository on [GitHub](https://github.com/new) (e.g. `ideal-kitchens-zambia`).
-2. Link this local repository and push:
-   ```bash
-   git remote add origin https://github.com/YOUR-USERNAME/ideal-kitchens-zambia.git
-   git branch -M main
-   git push -u origin main
-   ```
-3. Go to [vercel.com/new](https://vercel.com/new).
-4. Click **Import** next to your `ideal-kitchens-zambia` repository.
-5. Keep the default settings (Framework Preset: **Other**) and click **Deploy**.
-6. Your website will be live worldwide in seconds with automatic HTTPS and global edge CDN!
+### Option A: Via Cloudflare Dashboard (Recommended)
+1. Log in to the [Cloudflare Dashboard](https://dash.cloudflare.com/).
+2. Navigate to **Workers & Pages** > **Create application** > **Pages** > **Connect to Git**.
+3. Select your `kitchen-ideals` GitHub repository.
+4. Set the build configuration:
+   - **Framework preset:** `None`
+   - **Build command:** *(Leave blank)*
+   - **Build output directory:** *(Leave blank or `/`)*
+   - **Root directory:** *(Leave blank)*
+5. Click **Save and Deploy**. Your site will be deployed across Cloudflare's 300+ edge data centers in seconds with automatic SSL and enterprise DDoS protection.
+
+### Option B: Via Wrangler CLI
+Deploy directly from your terminal:
+```bash
+npx wrangler pages deploy . --project-name=kitchen-ideals
+```
+
+---
+
+## 7. Deploying to Vercel (Alternative Production)
+
+This project is also configured with `vercel.json` for edge performance, clean URLs, and security headers.
+
+### Option A: GitHub & Vercel Dashboard
+1. Go to [vercel.com/new](https://vercel.com/new).
+2. Click **Import** next to your repository.
+3. Keep default settings (Framework Preset: **Other**, Output Directory: `.`) and click **Deploy**.
 
 ### Option B: Deploy via Vercel CLI
-If you prefer deploying directly from your terminal:
 ```bash
-npx vercel
+npx vercel --prod
 ```
-- Follow the prompts to log in to your Vercel account.
-- For a production deployment directly to your live domain:
-  ```bash
-  npx vercel --prod
-  ```
