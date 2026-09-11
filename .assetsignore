@@ -1,0 +1,17 @@
+# Cloudflare Static Assets Ignore List
+# Prevents build dependencies and binaries from being uploaded as static assets
+
+node_modules/
+.git/
+.github/
+.wrangler/
+.vercel/
+.gemini/
+*.log
+package.json
+package-lock.json
+bun.lockb
+bun.lock
+README.md
+wrangler.jsonc
+vercel.json
