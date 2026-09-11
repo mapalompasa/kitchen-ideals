@@ -5,8 +5,7 @@
   "description": "Ideal Kitchens Wardrobe & Hardware Ltd — Luxury Digital Experience & Architectural Estimator",
   "scripts": {
     "start": "serve .",
-    "dev": "serve . -l 3000",
-    "build": "echo 'Static assets ready for deployment'"
+    "dev": "serve . -l 3000"
   },
   "keywords": [
     "kitchens",
