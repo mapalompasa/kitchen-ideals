@@ -41,11 +41,13 @@ function initSiteLoader() {
   if (!loader) return;
 
   const counterEl = document.getElementById('loaderCounter');
+  const barEl = loader.querySelector('.loader-line-bar');
   let count = 0;
   const timer = setInterval(() => {
     count += Math.floor(Math.random() * 14) + 5;
     if (count > 100) count = 100;
     if (counterEl) counterEl.textContent = `${count}%`;
+    if (barEl) barEl.style.width = `${count}%`;
 
     if (count === 100) {
       clearInterval(timer);
@@ -57,6 +59,8 @@ function initSiteLoader() {
   }, 35);
 
   setTimeout(() => {
+    if (barEl) barEl.style.width = '100%';
+    if (counterEl) counterEl.textContent = '100%';
     loader.classList.add('is-loaded');
     document.body.classList.remove('is-loading');
   }, 1800);
